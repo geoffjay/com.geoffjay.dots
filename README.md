@@ -1,16 +1,73 @@
-# dots
+# Press Here
 
-A new Flutter project.
+A Flutter interactive game inspired by the children's book concept. Manipulate colorful dots through taps, swipes, shakes, and tilts.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+- **Tap** - Create new dots near existing ones
+- **Multi-tap** - Spawn dots in a circular pattern
+- **Long press** - Grow a dot's size
+- **Swipe** - Cycle through colors (yellow, red, blue)
+- **Shake device** - Scatter all dots randomly
+- **Tilt device** - Apply gravity to move dots
 
-A few resources to get you started if this is your first Flutter project:
+## Requirements
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Flutter 3.38.5+
+- Dart 3.10.4+
+- Android SDK
+- PocketBase backend (for authentication)
+- Google OAuth credentials
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Setup
+
+1. Install dependencies:
+
+   ```sh
+   make deps
+   ```
+
+2. Create a `.env` file with your Google OAuth client ID:
+
+   ```
+   GOOGLE_CLIENT_ID=your-client-id-here
+   ```
+
+3. Configure PocketBase:
+   - Production: `https://admin.geoffjay.com`
+   - Development: `http://127.0.0.1:8090`
+
+## Development
+
+```sh
+# Run in debug mode (local backend)
+make run
+
+# Run in release mode (production backend)
+make run-release
+
+# Build debug APK
+make build-debug
+
+# Build release APK
+make build
+
+# Run tests
+make test
+
+# Static analysis
+make analyze
+```
+
+## Tech Stack
+
+- **Framework**: Flutter/Dart
+- **State Management**: Provider
+- **Navigation**: GoRouter
+- **Backend**: PocketBase
+- **Auth**: Google Sign-In
+- **Sensors**: sensors_plus (accelerometer/gyroscope)
+
+## License
+
+MIT
